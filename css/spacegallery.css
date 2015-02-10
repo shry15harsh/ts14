@@ -1,0 +1,30 @@
+#gallery {
+    margin-left:30%;
+	width: 70%;
+	height: 100%;
+}
+#gallery img {
+	border: 2px solid #52697E;
+}
+a.loading {
+	background: #fff url(../images/ajax_small.gif) no-repeat center;
+}
+.spacegallery {
+	position: relative;
+	overflow: hidden;
+}
+.spacegallery img {
+	position: absolute;
+	left: 55%;
+    height:80%;
+}
+.spacegallery a {
+	position: absolute;
+	z-index: 1000;
+	display: block;
+	top: 0;
+	left: 0;
+	width: 80%;
+	height: 100%;
+	//background: url(images/blank.gif);
+}

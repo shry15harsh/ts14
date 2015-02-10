@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jumper</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link href="scripts/style.css" rel="stylesheet" type="text/css">
+
+    <script src="scripts/jquery-1.9.1.min.js"></script>
+  </head>
+
+  <body>
+	<img src="../images/ts_icon.png" style="position:absolute;width:10vmin;height:10vmin;top:2%;left:2%;"/>
+	<div id="game">
+		<div id="blocks">
+			<li class="block">
+			<li class="block">
+			<li class="block">
+			<li class="block">
+			<li class="block">
+			<li class="block">
+			<li class="block">
+			<li class="block">
+			<li class="block">
+			<li class="block">
+		</div>
+	</div>
+	<div id="bottom">Developed by GAWDS&copy;</div>
+	
+	<script>
+		var i;
+		$(document).ready(function(){
+			i=1;
+			setInterval(function(){
+				$('#blocks li:nth-child('+i+')').css('display','none');//remove();
+				++i;
+			},500);
+		});
+	</script>
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-49269037-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </body>
+</html>

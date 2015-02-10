@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
+  <head>
+    <title>Typing Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/typingtest.css" rel="stylesheet">
+	<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.css"/>
+  </head>
+  <body>
+  
+	<div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '640735195993790',
+          status     : true,
+          xfbml      : true
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+	
+	
+	<img src="images/ts_icon.png">
+	<div class="testarea">
+		<h1>Know your <u>typing</u> Speed</h1>
+		<div class="text"></div>
+		<textarea spellcheck="false" autocomplete="off"></textarea>
+		<div class="result"><i>Just start typing the above text and test will start. Press <u>Enter</u> after finishing the test.</i>
+		</div>
+		<div class="share" onclick="openFbPopUp();">Share your result on Facebook.</div>
+	</div>
+	<div class="bottom">Developed by GAWDS&copy;</div>
+    <script src="js/jquery.js"></script>
+	<script>
+	var seconds=0;
+	var text,testText,textptr=0,testTextptr=0;
+	var firstTime,correctionMode,completeMode;
+	var timeId;
+	var para,speed;
+	$(document).ready(function() {
+		$('.testarea textarea').bind('cut copy paste', function(event) {
+			event.preventDefault();
+		});
+		firstTime=true;
+		completeMode=false;
+		para=new Array();
+		para[1]='By the time he decided to build a factory of luxury sports cars, Ferruccio was already a very wealthy man. In the period following World War II, he founded his tractor factory, creating a major point of reference in this industry. Other businesses followed, and he amassed his fortune at the perfect time, before his fiftieth birthday.';
+		para[2]='Perhaps Harvard will squelch it for legal reasons without realizing its value as a venture that could possibly be expanded to other schools maybe even ones with good-looking people, Zuckerberg wrote in his personal blog. "But one thing is certain, and it is that I am a jerk for making this site. Oh well. Someone had to do it eventually..."'
+		para[3]='Source code is the part of software that most computer users do not ever see; it is the code computer programmers can use to change how a piece of software works. Programmers who have access to a computer program source code can improve that program by adding features to it or fixing parts that do not always work correctly.'
+		para[4]='Before Jonathan Kuniholm, a marine reservist, was shipped off to the war in Iraq, he and three friends formed a research and development firm they called Tackle Design. The four men had worked together in an industrial engineering class at North Carolina State University (N.C.S.U.), and, filled with youthful enthusiasm, they hoped their fledgling company could survive on jobs that were interesting and beneficial rather than simply moneymaking.'
+		para[5]='Nowadays technology has brought a lot of changes to our life, especially in education and communication. In communication, the major changes happen in the way we communicate with other people. We do not need to meet them in person or face to face to say what is in our mind. We simply can phone them or do video chat using Internet connection.'
+		text=para[Math.floor(Math.random()*5)+1];
+		$('.testarea .text').html(text);
+		$('.testarea textarea').html('');
+	});
+	
+	function openFbPopUp() {
+	FB.ui(
+  {
+    method: 'feed',
+    name: 'TechSpardha Typing Speed Test',
+    link: 'http://techspardha.org/typingtest.html',
+    picture: 'http://techspardha.org/images/typing.png',
+    description: 'My typing speed is '+speed+' wpm. Check yours at http://techspardha.org'
+  },
+  function(response) {
+    if (response && response.post_id) {
+      alert('Post was published.');
+    } else {
+      alert('Post was not published.');
+    }
+  }
+);
+}
+	$('.testarea textarea').on("keypress",function(e){
+		if(completeMode) return false;
+		if(firstTime){
+			timeId=setInterval(function(){
+				++seconds;
+				console.log(seconds);
+			},1000);
+			firstTime=false;
+		}
+		else if(!correctionMode){
+			if(textptr+1==text.length){
+				clearInterval(timeId);
+				speed=Math.floor((text.length/seconds)*13.3);
+				$('.result').css('color','skyblue');
+				$('.result').html('Hey Fella, Your typing Speed is <span style="color:white;"><b><u>'+speed+'</u></b></span> words per minute.<br>Reload the page for a new test.<br><br>');
+				$('.share').css('display','inline-block');
+				$('.result').css('text-align','center');
+				completeMode=true;
+			}
+			testText=$('.testarea textarea').val();
+			console.log(textptr+','+testTextptr+','+text[textptr]+','+testText[testTextptr]);
+			
+			if(text[textptr]!=testText[testTextptr]){
+				$('.testarea textarea').css('background','red');
+				correctionMode=true;
+				return false;
+			}
+			++textptr;
+			++testTextptr;
+		}
+		else if(correctionMode){
+			testText=$('.testarea textarea').val();
+			if(testTextptr+1>=testText.length){
+				correctionMode=false;
+				$('.testarea textarea').css('background','white');
+				--textptr;
+				--testTextptr;
+			}
+		}
+		if(e.keyCode>=37&&e.keyCode<=40){
+			return false;
+		}
+	});
+	</script>
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-49269037-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </body>
+</html>

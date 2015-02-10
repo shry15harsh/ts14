@@ -1,0 +1,74 @@
+@font-face{
+font-family: accent;
+src: url('../fonts/accent.ttf');
+}
+@font-face{
+font-family: vetka;
+src: url('../fonts/Vetka.otf');
+}
+@font-face{
+font-family: gabriela;
+src: url('../fonts/Gabriela.woff');
+}
+body{
+    margin:0;
+    overflow:hidden;
+}
+.testarea{
+    position:absolute;
+    width:80%;
+    height:80%;
+    left:10%;
+    top:10%;
+    border-radius:10px;
+    text-align:center;
+    background:rgba(0,0,0,0.7);
+    color:white;
+}
+.testarea h1{    
+    font-family:vetka;
+}
+.testarea .text,.testarea .result{
+    margin-left:10%;
+    margin-right:10%;
+    text-align:justify;
+}
+.testarea .result{
+    margin-top:5%;
+    font-size:1.2em;
+}
+.testarea textarea{
+    margin-top:5%;
+    margin-left:10%;
+    margin-right:10%;
+    width:80%;
+    border:1px dashed darkgreen;//none;
+    text-align:justify;
+    padding:2%;
+}
+img{
+    position:absolute;
+    width:100px;
+    height:100px;
+    top:2%;
+    left:2%;
+}
+.bottom{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    text-align:center;
+    padding:2%;
+    font-size:1.8em;
+    font-family:vetka;
+}
+.share{
+    padding:5px;
+    background:skyblue;
+    display:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+.share:hover{
+    box-shadow:2px 2px 25px whitesmoke;
+}

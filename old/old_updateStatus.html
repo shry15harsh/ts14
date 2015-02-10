@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Update News</title>
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+	<style>
+		.modal-body .form-control{
+    width:100%;
+    border:none;
+    resize:none;
+}
+	</style>
+	<script>
+				$(document).ready(function(){
+		$('#myModal').on('shown.bs.modal', function (e) {
+			var keys={};
+			window.addEventListener("keydown",
+			function(e){
+				$('#myModal textarea').focus().val('');
+				window.removeEventListener("keydown",arguments.callee,false);
+			});
+		});
+		});
+	</script>
+	</head>
+	<body>
+	<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+		Update News
+	</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">What's the news for people?</h4>
+      </div>
+      <div class="modal-body">
+        <textarea class="form-control" rows="4">Start typing...</textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+	</body>
+</html>

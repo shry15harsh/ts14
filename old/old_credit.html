@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Credit</title>
+		<script src="js/jquery.js"></script>
+		<script>
+			var frontOn;
+			$(document).ready(function(){
+			frontOn=true;
+			$('.list li').click(function(){
+				if(!frontOn){
+					$("#frontend").css('display','block');
+					$("#backend").css('display','none');
+					$('.creditArea .slider').css('transform','translateX(24.5%)');
+					frontOn=true;
+				}
+				else{
+					$("#frontend").css('display','none');
+					$("#backend").css('display','block');
+					$('.creditArea .slider').css('transform','translateX(140%)');
+					frontOn=false;
+				}
+			});
+			});
+		</script>
+		<link href="css/credit.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="creditArea">
+			<ul class="list">
+				<li id="designers">Front-end Developers</li>
+				<li id="backenders">Back-end Developers</li>
+			</ul>
+			<div class="credits" id="frontend">
+				<ul>
+					<li>
+						<div class="contact"></div>
+						<div class="name">
+							<h4>Ferb</h4>
+							<p>Developer</p>
+						</div>
+					</li>
+					<li>
+						<div class="contact"></div>
+						<div class="name">
+							<h4>Ferb</h4>
+							<p>Developer</p>
+						</div>
+					</li>
+					<li>
+						<div class="contact"></div>
+						<div class="name">
+							<h4>Ferb</h4>
+							<p>Developer</p>
+						</div>
+					</li>
+					<li>
+						<div class="contact"></div>
+						<div class="name">
+							<h4>Ferb</h4>
+							<p>Developer</p>
+						</div>
+					</li>
+					<li>
+						<div class="contact"></div>
+						<div class="name">
+							<h4>Deepak Yadav</h4>
+							<p>Developer</p>
+						</div>
+					</li>
+					<li>
+						<div class="contact"></div>
+						<div class="name">
+							<h4>Deepak Yadav</h4>
+							<p>Developer</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="credits" id="backend">
+				<ul>
+					<li>
+						<div class="contact"></div>
+						<div class="name">
+							<h4>Deepak Yadav</h4>
+							<p>Developer</p>
+						</div>
+					</li>
+					<li>
+						<div class="contact"></div>
+						<div class="name">
+							<h4>Deepak Yadav</h4>
+							<p>Developer</p>
+						</div>
+					</li>
+					<li>
+						<div class="contact"></div>
+						<div class="name">
+							<h4>Deepak Yadav</h4>
+							<p>Developer</p>
+						</div>
+					</li>
+					<li>
+						<div class="contact"></div>
+						<div class="name">
+							<h4>Deepak Yadav</h4>
+							<p>Developer</p>
+						</div>
+					</li>
+					<li>
+						<div class="contact"></div>
+						<div class="name">
+							<h4>Deepak Yadav</h4>
+							<p>Developer</p>
+						</div>
+					</li>
+					<li>
+						<div class="contact"></div>
+						<div class="name">
+							<h4>Deepak Yadav</h4>
+							<p>Developer</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="slider frontOn"</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+form
+{
+display:none;
+position:absolute;
+top:75px;
+}
+form li
+{
+margin-left:2%;
+list-style-type:none;
+}
+select
+{
+margin-left:3%;
+}
+li input[type="radio"]
+{
+margin-left:3%;
+}
+.ruler
+{
+width: 90%;
+margin-left:12px;
+height: 7px;
+background: #F87431;
+overflow: hidden;
+margin-top:2%;
+}
+input[type="submit"]
+{
+padding:3px;
+}
+.show{
+    position:absolute;
+    padding:5px;
+    background:grey;
+    border-radius:5px;
+    border:2px solid black;
+    cursor:pointer;
+}
+.show:hover{
+    border-color:white;
+    color:black;
+}

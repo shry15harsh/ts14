@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Wall</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/physics.css" rel="stylesheet">
+		<script>
+			window.onload=function(){
+//init();
+//};
+// Initialize the scene
+imageObj.src = "smoke.png";
+init();
+//draw();
+//update();
+
+// If the context is set then we can draw the scene (if not then the browser does not support canvas)
+if (context) {
+    setInterval(function() {
+        // Update the scene befoe drawing
+        update();
+
+        // Draw the scene
+        draw();
+    }, 1000 / targetFPS);
+}
+};
+		</script>
+	</head>
+	<body>
+		<script src="js/jquery.js"></script>
+		<script src="js/physics.js"></script>
+		<div class="box"></div>
+		<canvas id="myCanvas" width="400" height="400"></canvas>
+	</body>
+</html>

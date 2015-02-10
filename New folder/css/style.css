@@ -1,0 +1,90 @@
+body{
+    overflow:hidden;
+    background:#1a1a1a;
+}
+#topNav{
+    height:100px;
+//    background:black;//rgba(245,245,245,0.7);
+//    background:url('../../header.png');
+    background-size:100% 100%;
+    padding:1.5%;
+    box-shadow:inset 2px 2px 4px 0px #2a2a2a;//#0D0D0D;
+    border-bottom:5px solid #16181D;
+    border-right:1px solid #16181D;}
+#quote{
+    position:relative;
+    bottom:85%;
+    font-size:2em;
+    font-style:italic;
+}
+#bottomNav{
+    height:30px;
+    background:black;//rgba(245,245,245,0.7);
+}
+#bottomNav ul{
+    position:relative;
+    bottom:20%;
+}
+#topNav ul li,#bottomNav ul li{
+    list-style-type:none;
+    display:inline;
+}
+#topNav ul li a,#bottomNav ul li a{
+    color:white;
+    text-shadow:2px 2px 4px white;
+}
+.mainCol{
+    position:relative;
+    top:140px;
+    margin-left:20px;
+    border-radius:5px;
+    padding-top:2%;
+    padding-bottom:2%;
+    transition:width 2s;
+}
+#leftSideBar{
+    height:500px;//100%;
+    padding:0%;
+    background:#1a1a1a;
+    box-shadow:inset 1px 1px 2px 0px #2a2a2a;//#0D0D0D;
+    border-bottom:1px solid #16181D;
+    border-right:1px solid #16181D;
+}
+#leftSideBar img{
+    width:98%;
+    height:480px;
+    margin-left:1%;
+    margin-top:10px;
+    border-radius:8px;
+}
+#centerBar{
+    height:100%;
+    box-shadow:inset 1px 1px 2px 0px #2a2a2a;//#0D0D0D;
+    border-bottom:1px solid #16181D;
+    border-right:1px solid #16181D;
+}
+#centerBar ul li{
+    list-style-type:none;
+    color:white;
+    margin-bottom:3%;
+    border-radius:5px;
+    width:100%;
+    min-height:50px;
+    padding:2%;
+    transition:opacity 1s;
+    box-shadow:inset 1px 1px 2px 0px #0D0D0D;
+    border-bottom:1px solid #36383D;
+    border-right:1px solid #36383D;
+}
+#buttonContainer{
+    position:relative;
+    top:120px;
+    left:85%;
+    width:135px;
+}
+#buttonContainer button{
+    background-image:-moz-linear-gradient(top,rgb(235,235,235) 0%,white 50%,rgb(235,235,235) 100%);
+}
+.downToUp{
+    tranform:translateY(-10%);
+}

@@ -1,0 +1,644 @@
+<?php
+//require_once __DIR__.'/db_connect.php';
+//$db = new DB_CONNECT();
+
+/*function eventlist()
+{
+$y=$_GET['x'];
+return $y;
+//$events=mysql_query("select name from event_desc where category='$x'");
+//$z=mysql_fetch_array($events);
+//return $z;
+}*/
+
+?>
+<!DOCTYPE html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
+  <head>
+    <title>TechSpardha 2014 - National Institute of Technology, Kurukshetra</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/index.css" rel="stylesheet">
+	<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.css"/>
+	<link rel="stylesheet" href="css/doraemon.css"/>
+	<link rel="stylesheet" type="text/css" href="css/jquery.gridster.css">
+	<link rel="stylesheet" type="text/css" href="css/eventStyle.css">
+	<link rel="stylesheet" media="screen" type="text/css" href="css/spacegallery.css" />
+	<script src="js/countdown.js"></script>
+	<!--<meta property="og:title"           content="TechSpardha-2014, NIT Kurukshetra (28-31 March)" /> 
+	<meta property="og:site_name" content="TechSpardha-14"/>
+	<meta property="og:url" content="http://techspardha.org/index.html"/>
+	<meta property="og:type" content="article" />
+	<meta name="description" property="og:description"     content="TechSpardha is annual technical fest of NIT Kurukshetra." /> 
+	<meta property="og:image"     content="http://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-prn2/t1/1506060_279964482159500_746667693_n.jpg" /> -->
+  </head>
+  <body>
+	<div class="notifyBar" title="Hover on menu icon to open">
+	<div class="fb-like-box" data-href="http://www.facebook.com/techspardha.nitkkr" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="false"></div>
+		<i class="icon icon-align-justify pull" title="Click to pull"></i>
+		<span class="battery" title="NIT Kurukshetra is fueling for giving you best experience"><img src="images/battery.gif"></span>
+		<span class="blink" id="updates">Updates</span>
+		<!--<span class="blink" id="fevents">Flagship Events</span>-->
+	</div>
+	<div class="screen">
+		<div class="register">
+		<div class="doraemon" title="Hey I am an HTML Doraemon. (Totally made using HTML and CSS)">
+			<div id="head">
+				<div class="eyes" id="left">
+					<div class="eyeball">
+						<div class="spark circle"></div>
+					</div>
+				</div>
+				<div class="eyes" id="right">
+					<div class="eyeball">
+						<div class="spark circle"></div>
+					</div>
+				</div>
+				<div id="face">
+					<div id="nose" class="circle">
+						<div class="spark circle"></div>
+					</div>
+					<div class="lips" id="upper"></div>
+					<div class="lips" id="lower"></div>
+					<div class="lines" id="underNose"></div>
+					<ul class="moustaches">
+						<li class="lines"></li>
+						<li class="lines"></li>
+						<li class="lines"></li>
+						<li class="lines"></li>
+						<li class="lines"></li>
+						<li class="lines"></li>
+					</ul>
+				</div>
+			</div>
+			<div id="neck"></div>
+		</div>
+		<a href="schedule.pdf" target="_blank"><span class="text">Schedule of TechSpardha</span></a>
+	  </div>
+	  <div id="gallery" class="spacegallery">
+			<img width="700" height="500" src="images/flagship/excalibur.jpg"/>
+			<img src="images/flagship/robotics.jpg"/>
+			<img width="700" height="500" src="images/workshops/mozilla.jpg"/>
+		</div>
+	  <div class="impStuff">
+			<div class="countdown">
+			<h1>
+			<li>T
+			<li>e
+			<li>c
+			<li>h
+			<li>S
+			<li>p
+			<li>a
+			<li>r
+			<li>d
+			<li>h
+			<li>a
+			<li>&nbsp;			
+			<li>c
+			<li>o
+			<li>m
+			<li>i
+			<li>n
+			<li>g
+			<li>&nbsp;
+			<li>i
+			<li>n
+			</h1>
+			<script>
+				var test1 = new Countdown({
+                              year	: 2014, 
+                              month	: 3, 
+                              day	 : 28, 
+                              hour	: 0,
+                              ampm	: "am",
+                              minute	: 0, 
+                              second	: 0,
+							  rangeHi:"day",
+							  width:200,
+							  height:100,
+							  padding:0.5
+                         });
+			</script>
+			</div>
+	  </div>
+	</div>
+	<div class="info">
+		Please drop a mail at <b>gawds.nitk@gmail.com</b>.
+	</div>
+	<div class="menu">
+	  <li><a href="typingtest.html" target="_blank"><img><span class="name">Typing Speed</span></a>
+	  <li><a href="pquiz/index.html" target="_blank"><img><span class="name">Personality Test</span></a>
+	  <li><a href="alphabets/index.html" target="_blank"><img><span class="name">Alphabets</span></a>
+	  <li><span class="urapp">YOUR APP HERE</span>	
+	</div>
+	
+	<div class="sponsorScreen">
+		<div class="title" style="height:12%">
+			<div class="box" onclick="closesponsorScreen();"><i class="icon icon-reply"></i>Home</div>
+		</div>
+		<iframe id="sponsor"></iframe>
+	</div>
+	<div class="workshopScreen">
+		<div class="title" style="height:12%">
+			<div class="box" onclick="closeworkshopScreen();"><i class="icon icon-reply"></i>Home</div>
+		</div>
+		<div class="frame effects" id="cycleitems">
+			<ul class="clearfix">
+				<li><img></li>
+				<li><img></li>
+			</ul>
+		</div>
+		<div class="iframe">
+			<span class="close"><i class="icon icon-minus"></i></span>
+			<img/>
+		</div>
+	</div>
+	<div class="contactScreen">
+		<i class="icon icon-reply back" onclick="closecontactdetails();"></i>
+		<i class="icon icon-home home" onclick="closecontactscreen();"></i>
+		<img src="images/nexus.png">
+		<span class="conveners">Conveners</span>
+		<div class="contacts">
+			<li><img src="images/dp/aakash.jpg"/><span>Aakash Singh</span></li>
+			<li><img src="images/dp/pratik.jpg"/><span>Pratik Sharda</span></li>
+			<li><img src="images/dp/kashish.jpg"/><span>Kashish Bajaj</span></li>
+			<li><img src="images/dp/sudeep.jpg"/><span>Sudeep Rawat</span></li>
+			<li><img src="images/dp/vaibhav.jpg"/><span>Vaibhav Sharma</span></li>
+			<li><img src="images/dp/aanchal.jpg"/><span>Aanchal Mehta</span></li>
+		</div>
+		<div class="contact">
+			<img src="images/quiz.jpg"/>
+			<span class="name"></span>
+			<span class="phone"></span>
+			<span class="email"></span>
+		</div>
+	</div>
+	<div class="eventScreen">
+		<div class="title">
+			<div class="box" onclick="closeeventScreen();"><i class="icon icon-reply"></i>Home</div>
+		</div>
+		<div class="backbox">
+			<i class="icon icon-download"></i>
+		</div>
+		
+		<div class="eventssite" id="eventssite"></div>
+		
+		<div class="descriptionsite" data-content="eventName">
+			<div class="nav">
+				<li id="headdesc" onclick="showd();">Description</li>
+				<li id="headrules" onclick="showr();">Rules and Regulations</li>
+				<li id="headproblem" onclick="showp();">Problem Statement</li>
+				<li id="headcontact" onclick="showc();">Contact</li>
+			</div>
+			<div class="content" id="content"></div>
+		</div>
+		
+		<div class="gridster">
+			<ul>
+				<li data-row="1" data-col="2" data-sizex="3" data-sizey="1" onclick="showEvent('Managerial');"><img/>
+				<div class="overlay"><span><a class="eventName">Managerial</a><br/></span></div>
+				</li>
+				
+				<li data-row="3" data-col="3" data-sizex="3" data-sizey="1" onclick="showEvent('Technopolis');"><img />
+				<div class="overlay"><span><a class="eventName">Technopolis</a><br/></span></div>
+				</li>
+				
+				<li data-row="3" data-col="1" data-sizex="2" data-sizey="1" onclick="showEvent('Design');"><img />
+				<div class="overlay"><span><a class="eventName">Design</a><br/></span></div>
+				</li>
+	
+				<li data-row="2" data-col="2" data-sizex="1" data-sizey="1" onclick="showEvent('Fun Zone');"><img />
+				<div class="overlay"><span><a class="eventName">Fun Zone</a><br/></span></div>
+				</li>
+				
+				<li data-row="1" data-col="5" data-sizex="1" data-sizey="2" onclick="showEvent('Papyrus Vitae');"><img/>
+				<div class="overlay"><span><a class="eventName">Papyrus Vitae</a><br/></span></div>
+				</li>
+ 
+				<li data-row="1" data-col="1" data-sizex="1" data-sizey="2" onclick="showEvent('Quizzes');"><img/>
+				<div class="overlay"><span><a class="eventName">Quizzes</a><br/></span></div>
+				</li>
+				
+				<li data-row="2" data-col="3" data-sizex="2" data-sizey="1" onclick="showEvent('Online Events');"><img/>
+				<div class="overlay"><span><a class="eventName">Online Events</a><br/></span></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	</div>
+	<div class="screenNav bottomNav">
+		<div id="icons">
+		<li title="Events" class="event item" onclick="openeventScreen();"><img src="images/event2.png">
+		<li title="Workshops" class="workshops item" onclick="openworkshopScreen();"><img src="images/workshop2.png">
+		<li title="Click to launch App Viewer" onclick="openmenu();" class="launcher item"><img src="images/launcher.png">
+		<li title="Sponsors" class="sponsors item" onclick="opensponsorScreen();"><img src="images/sponsor3.png">
+		<li title="Contact" class="contact item" onclick='opencontactscreen();'><img src="images/contact.png">
+		</div>
+		
+		<div id="name">
+		<li class="name">Events
+		<li class="name">Workshops
+		<li class="name">Apps
+		<li class="name">Sponsors
+		<li class="name">Contact
+		</div>
+	</div>
+	<div class="menuNav bottomNav">
+		<li title="Go Back to Home" onclick="closemenu();"><img src="images/launcher2.png">
+	</div>
+    <script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/jquery.gridster.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/events.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/sly.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/plugins.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+	
+	/*$('.workshopScreen .frame ul li').click(function(){
+		$('.iframe').css('display','block');//('visibility','visible');
+		$('.iframe img').attr('src',$('img',this).attr("src"));
+		$('.iframe').css('width','80%');
+		$('.iframe').css('height','70%');
+	});
+	
+	$(document).keyup(function(e) {
+		if (e.keyCode == 27) {
+			$('.iframe').css('display','none');//('visibility','hidden');
+			$('.iframe').css('width','0%');
+			$('.iframe').css('height','0%');
+		}
+	});*/
+	
+	//JSON object for contact data
+	var contact =[
+		{
+			"name":"Aakash Singh",
+			"phone":"7206527235",
+			"email":"aakashsingh10393@gmail.com"
+		},
+		{
+			"name":"Pratik Sharda",
+			"phone":"9996083399",
+			"email":"pratiksharda2@gmail.com"
+		},
+		{
+			"name":"Kashish Bajaj",
+			"phone":"9996857583",
+			"email":"b.kashish92@gmail.com"
+		},
+		{
+			"name":"Sudeep Rawat",
+			"phone":"9802182845",
+			"email":"sudeeprawat6347@gmail.com"
+		},
+		{
+			"name":"Vaibhav Sharma",
+			"phone":"7206409240",
+			"email":"vaibhav1441@gmail.com"
+		},
+		{
+			"name":"Aanchal Mehta",
+			"phone":"9996254464",
+			"email":"aanchal.mehta28@gmail.com"
+		}
+	];
+	$('.contactScreen .contacts li').click(function(){
+		$('.contactScreen .contacts').css('display','none');
+		$('.contactScreen .contact').css('display','block');
+		$('.contactScreen .back').css('display','block');
+		
+		$('.contactScreen .contact img').attr('src',$('img',this).attr('src'));
+		$('.contactScreen .contact .name').html(contact[$(this).index()].name);
+		$('.contactScreen .contact .phone').html('<i class="icon icon-mobile-phone"></i>&nbsp;&nbsp;'+contact[$(this).index()].phone);
+		$('.contactScreen .contact .email').html('<i class="icon icon-envelope"></i>&nbsp;&nbsp;'+contact[$(this).index()].email);
+	});
+	function closecontactdetails(){
+		$('.contactScreen .contacts').css('display','block');
+		$('.contactScreen .contact').css('display','none');
+		$('.contactScreen .back').css('display','none');
+	}
+	var eventUploaded=false,workshopUploaded=false,appsUploaded=false,sponsorsUploaded=false,contactsUploaded=false;
+	  $('.menu li .urapp').mouseenter(function() {
+			$('.info').css('display','block');
+	  });
+	  $('.menu li .urapp').mouseout(function() {
+			$('.info').css('display','none');
+	  });
+	  function opensponsorScreen(){
+		$('.screen').css('z-index','-1');
+	    $('.sponsorScreen').css('z-index','2');
+	    $('.screen').css('opacity','0');
+	    $('.sponsorScreen').css('opacity','1');
+		if(!sponsorsUploaded){
+			$('.sponsorScreen #sponsor').attr('src','sponsor.html');
+			sponsorsUploaded=true;
+		}
+	  }
+	  function closesponsorScreen(){
+		$('.screen').css('z-index','1');
+	    $('.sponsorScreen').css('z-index','-1');
+	    $('.screen').css('opacity','1');
+	    $('.sponsorScreen').css('opacity','0');
+	  }
+	  function openworkshopScreen(){
+		$('.screen').css('z-index','-1');
+	    $('.workshopScreen').css('z-index','2');
+	    $('.screen').css('opacity','0');
+	    $('.workshopScreen').css('opacity','1');
+		if(!workshopUploaded){
+			$('.workshopScreen .frame ul li:nth-child(1) img').attr('src','images/workshops/nnsc.jpg');
+			$('.workshopScreen .frame ul li:nth-child(2) img').attr('src','images/workshops/mozilla.jpg');
+			workshopUploaded=true;
+		}
+	  }
+	  function closeworkshopScreen(){
+		$('.screen').css('z-index','1');
+	    $('.workshopScreen').css('z-index','-1');
+	    $('.screen').css('opacity','1');
+	    $('.workshopScreen').css('opacity','0');
+	  }
+	  function opencontactscreen(){
+	    $('.screen').css('z-index','-1');
+	    $('.contactScreen').css('z-index','2');
+	    $('.screen').css('opacity','0');
+	    $('.contactScreen').css('opacity','1');
+		if(!contactsUploaded){
+			$('.contactScreen .contacts li:nth-child(1) img').attr('src','images/dp/aakash.jpg');
+			$('.contactScreen .contacts li:nth-child(2) img').attr('src','images/dp/pratik.jpg');
+			$('.contactScreen .contacts li:nth-child(3) img').attr('src','images/dp/kashish.jpg');
+			$('.contactScreen .contacts li:nth-child(4) img').attr('src','images/dp/sudeep.jpg');
+			$('.contactScreen .contacts li:nth-child(5) img').attr('src','images/dp/vaibhav.jpg');
+			$('.contactScreen .contacts li:nth-child(6) img').attr('src','images/dp/aanchal.jpg');
+			
+			contactsUploaded=true;
+		}
+	  }
+	  function closecontactscreen(){
+		closecontactdetails();
+	    $('.screen').css('z-index','1');
+	    $('.contactScreen').css('z-index','-1');
+	    $('.screen').css('opacity','1');
+	    $('.contactScreen').css('opacity','0');
+	  }
+	  function openeventScreen(){
+		$('.screen').css('z-index','-1');
+	    $('.eventScreen').css('z-index','1');
+	    $('.screen').css('opacity','0');
+	    $('.eventScreen').css('opacity','1');
+	    $('.screenNav').css('transform','translateY(110%)');
+	    $('.notifyBar').css('transform','translateY(-105%)');
+		$('.eventScreen').css('transform','translateX(0%)');
+		if(!eventUploaded){
+			$('.gridster ul li:nth-child(1) img').attr('src','images/managerial.jpg');
+			$('.gridster ul li:nth-child(2) img').attr('src','images/technopolis.jpg');
+			$('.gridster ul li:nth-child(3) img').attr('src','images/design.jpg');
+			$('.gridster ul li:nth-child(4) img').attr('src','images/fun.jpg');
+			$('.gridster ul li:nth-child(5) img').attr('src','images/papyrus.jpg');
+			$('.gridster ul li:nth-child(6) img').attr('src','images/quiz.jpg');
+			$('.gridster ul li:nth-child(7) img').attr('src','images/online.jpg');
+			
+			eventUploaded=true;
+		}
+	  }
+	  function closeeventScreen(){
+		$('.screen').css('z-index','1');
+	    $('.eventScreen').css('z-index','-1');
+	    $('.screen').css('opacity','1');
+	    $('.eventScreen').css('opacity','0');
+	    $('.screenNav').css('transform','translateY(0%)');
+	    $('.notifyBar').css('transform','translateY(-95%)');
+		$('.eventScreen').css('transform','translateX(100%)');
+	  }
+	  function openmenu(){
+	    $('.screen').css('z-index','-1');
+	    $('.menu').css('z-index','1');
+	    $('.screen').css('opacity','0');
+	    $('.menu').css('opacity','1');
+	    $('.screenNav').css('transform','translateY(110%)');
+	    $('.menuNav').css('transform','translateY(0%)');
+		if(!appsUploaded){
+			$('.menu li:nth-child(1) img').attr('src','images/typing.png');
+			$('.menu li:nth-child(2) img').attr('src','images/personality2.png');
+			$('.menu li:nth-child(3) img').attr('src','images/alphabets.png');
+			
+			appsUploaded=true;
+		}
+	  }
+	  function closemenu(){
+	    $('.screen').css('z-index','1');
+	    $('.menu').css('z-index','-1');
+	    $('.screen').css('opacity','1');
+	    $('.menu').css('opacity','0');
+	    $('.screenNav').css('transform','translateY(0%)');
+	    $('.menuNav').css('transform','translateY(110%)');
+	  }
+	  /*$('.screen .register a').mouseenter(function() {
+			$('.screen .register .doraemon .lips').css('transform','rotate(0deg) translateY(0px)');
+			$('.screen .register .doraemon #head').css('background','skyblue');
+	  });
+	  $('.screen .register a').mouseout(function() {
+			$('.screen .register .doraemon .lips').css('transform','rotate(180deg) translateY(-205px)');
+			$('.screen .register .doraemon #head').css('background','grey');
+	  });*/
+	  var nop=false;;
+	  $('.notifyBar .pull').click(function() {
+		if(!nop){
+			$('.notifyBar').css('transform','translateY(0%)');
+				nop=true;
+			}
+			else{
+			$('.notifyBar').css('transform','translateY(-95%)');
+				nop=false;
+			}
+	  });
+	  var old,i,max;
+	  $(document).ready(function(){
+		//	$(".content").mCustomScrollbar();
+			i=1;
+			max=$('.countdown h1 li').length;
+			old=max;
+			setInterval(function(){
+				if(max<i)
+				i=1;
+				$('.countdown li:nth-child('+old+')').css('opacity','1');
+				$('.countdown li:nth-child('+i+')').css('opacity','0.5');
+				old=i;
+				++i;
+			},200);
+			$('#gallery').spacegallery({loadingClass: 'loading'});
+			
+			$('.screen .register .doraemon .lips').css('transform','rotate(0deg) translateY(0px)');
+			$('.screen .register .doraemon #head').css('background','skyblue');
+	  });
+	</script>
+	<div id="fb-root"></div>
+<script>
+window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '536637919682248',
+          status     : true,
+          xfbml      : true
+        });
+      };
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=536637919682248";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+	function showd(){
+		$('#desc').css('display','block');
+		$('#rules').css('display','none');
+		$('#problem').css('display','none');
+		$('#contact').css('display','none');
+   }
+
+   function showr(){
+		$('#desc').css('display','none');
+		$('#rules').css('display','block');
+		$('#problem').css('display','none');
+		$('#contact').css('display','none');
+   }
+   function showp(){
+		$('#desc').css('display','none');
+		$('#rules').css('display','none');
+		$('#problem').css('display','block');
+		$('#contact').css('display','none');
+   }
+   function showc(){
+		$('#desc').css('display','none');
+		$('#rules').css('display','none');
+		$('#problem').css('display','none');
+		$('#contact').css('display','block');
+   }
+   </script>
+ <script>
+ function showEvent(str)
+{
+
+if (str=="")
+  {
+  document.getElementById("eventssite").innerHTML="";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("eventssite").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","getevents.php?eventname="+str,true);
+xmlhttp.send();
+}
+ </script>
+ <script>
+  function showDesc(str)
+{
+
+if (str=="")
+  {
+  document.getElementById("content").innerHTML="";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("content").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","getdescription.php?name="+str,true);
+xmlhttp.send();
+}
+
+</script>
+<script>
+jQuery(function($){
+	'use strict';
+(function () {
+		var $frame = $('#cycleitems');
+		var $wrap  = $frame.parent();
+
+		// Call Sly on frame
+		$frame.sly({
+			horizontal: 1,
+			itemNav: 'forceCentered',
+			smart: 1,
+			activateOn: 'click',
+			mouseDragging: 1,
+			touchDragging: 1,
+			releaseSwing: 1,
+			startAt: 0,
+			scrollBar: $wrap.find('.scrollbar'),
+			scrollBy: 1,
+			speed: 300,
+			elasticBounds: 1,
+			easing: 'easeOutExpo',
+			dragHandle: 1,
+			dynamicHandle: 1,
+			clickBar: 1,
+
+			// Cycling
+			cycleBy: 'items',
+			cycleInterval: 3000,
+			pauseOnHover: 1,
+
+			// Buttons
+			prev: $wrap.find('.prev'),
+			next: $wrap.find('.next')
+		});
+
+		// Pause button
+		$wrap.find('.pause').on('click', function () {
+			$frame.sly('pause');
+		});
+
+		// Resume button
+		$wrap.find('.resume').on('click', function () {
+			$frame.sly('resume');
+		});
+
+		// Toggle button
+		$wrap.find('.toggle').on('click', function () {
+			$frame.sly('toggle');
+		});
+	}());
+	});
+	</script>
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-49269037-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript" src="js/eye.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/spacegallery.js"></script>
+  </body>
+</html>

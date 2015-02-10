@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<title>Gallery</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/cgallery.css" rel="stylesheet">
+		<script src="js/jquery.js"></script>
+		<script>
+			var count,speed;
+			$(document).ready(function(){
+				count=0;
+				speed=0.1;
+				var mi=0;
+				var toggle=false;;
+				setInterval(function(){
+					count++;
+					if(count==1001){
+						count=1;
+						if(toggle){
+							toggle=false;
+							$("#second").css("left",'100%');
+						}
+						else{
+							toggle=true;
+							$("#first").css("left",'100%');
+						}
+					}
+					if(toggle){
+						var psleft=-(count*speed);
+					
+						var pfirst=$('#first').position();
+						var pfleft=pfirst.left;
+						pfleft=(pfleft/6);
+						pfleft-=speed;
+					}
+					else{
+						var pfleft=-(count*speed);
+					
+						var psecond=$('#second').position();
+						var psleft=psecond.left;
+						psleft=(psleft/6);
+						psleft-=speed;
+					}
+					$("#first").css("left",pfleft+'%');
+					$("#second").css("left",psleft+'%');
+					$(".movingImages").css("left",mi+'%');
+					mi-=speed;
+				},10);
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+			<img src="backWall.jpg" id="first" class="back" />
+			<img src="backWall.jpg" id="second" class="back" />
+			<div class="movingImages">
+				<img src="test_images/b1.jpg"/>
+				<img src="test_images/b2.jpg"/>
+				<img src="test_images/b3.jpg"/>
+				<img src="test_images/b4.jpg"/>
+				<img src="test_images/b5.jpg"/>
+				<img src="test_images/b6.jpg"/>
+			</div>
+		</div>
+	</body>
+</html>

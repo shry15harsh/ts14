@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wall</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/wall.css" rel="stylesheet">
+	<script>
+		var count = 0;
+		var bricks = new Array();
+		for(var j=0;j<225;++j){
+		  bricks[j] = 0;
+		}
+
+		var idMain = setInterval(function(){
+		  var i;
+		  i = Math.floor(Math.random()*225+1);
+		  if(bricks[i]==0){
+			bricks[i]=1;
+			breakit($('.col-md-1:nth-child('+i+')'));
+			++count;
+		  }
+		  if(count>225){
+			clearInterval(idMain);
+		  }
+		},50);
+
+		function breakit(elem){
+		  var int = 200;
+		  var t = 1*1000;
+		  var sc = 1;
+		  var sd = (sc/t)*int;
+		  var id =setInterval(function(){
+			sc -= sd;
+			elem.css('transform','scale('+sc+','+sc+')');
+			if(sc-sd<0){
+			  elem.css('transform','scale(0,0)');
+			  clearInterval(id);
+			}
+		  },int);
+		}
+	</script>
+  </head>
+  <body>
+    <script src="js/jquery.js"></script>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 even half"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even half"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 even half"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even half"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 even half"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even half"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 even half"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even half"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 even half"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even half"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 even half"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even half"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 even half"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even half"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 even half"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even half"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 odd"></div>
+	<div class="col-md-1 even half"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even"></div>
+	<div class="col-md-1 even half"></div>
+	<div class="icon"></div>
+	<div id="ts">TECHSPARDHA</div>
+  </body>
+</html>

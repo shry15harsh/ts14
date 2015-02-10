@@ -1,0 +1,159 @@
+@font-face{
+font-family: respective;
+src: url('../fonts/Respective.ttf');
+}
+body{
+    background:url('../images/stone.jpg');
+    background-size:100%;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+h1{
+    color:white;
+    font-family:open sans;
+    text-align:center;
+}
+.desk{
+    position:absolute;
+    width:85%;
+    height:80%;
+    //background:whitesmoke;
+    perspective:150px;
+    -webkit-perspective:150px;
+    left:7%;
+}
+.desk .upper{
+    position:relative;
+    width:100%;
+    height:30%;
+    background:rgba(0,0,0,0.2);
+    box-shadow:1px 0px 11px rgb(184,188,189);
+    border-top:1px solid rgb(184,188,189);
+    border-left:1px solid rgb(184,188,189);
+    text-align:center;
+    color:white;
+    font-size:4vw;
+}
+.desk .lower{
+    position:relative;
+    top:-2.1%;
+    left:-3%;
+    width:106%;
+    height:10%;
+    background:rgba(0,0,0,0.2);
+    border-top:1px solid rgb(184,188,189);
+    box-shadow:0px 0px 25px rgb(184,188,189);
+    transform:rotateX(20deg);
+    -webkit-transform:rotateX(20deg);
+}
+.desk .imgContainer{
+    position:absolute;
+    top:15%;
+    perspective:150px;
+    -webkit-perspective:150px;
+}
+.desk .imgContainer img{
+    width:190px;
+    height:90px;
+    transform:rotateX(10deg);
+    -webkit-transform:rotateX(10deg);
+    border:4px solid black;
+    padding:5px;
+    background:rgba(255,255,255,0.7);
+}
+.desk .imgContainer img:hover{
+    transform:rotateX(0deg);
+    -webkit-transform:rotateX(0deg);
+}
+.title{
+    font-family:respective;
+}
+#first .upper .title{
+    float:left;
+    margin-left:10%;
+    margin-top:3%;
+    font-size:1.3em;
+}
+#first .imgContainer{
+    margin-left:60%;
+}
+#second{
+    top:50%;
+}
+#second .imgContainer{
+    margin-left:32%;
+}
+#second .upper .title{
+    text-align:center;
+    margin-top:5%;
+    font-size:1em;
+}
+#third{
+    top:90%;
+}
+#third .imgContainer{
+    margin-left:12%;
+}
+#third .upper .title{
+    text-align:center;
+    margin-top:5%;
+    font-size:1em;
+}
+#fourth{
+    top:130%;
+}
+#fourth .imgContainer{
+    margin-left:3%;
+}
+#fourth .upper .title{
+    text-align:center;
+    margin-top:5%;
+    font-size:1em;
+}
+#fifth{
+    top:170%;
+}
+#fifth #onei{
+    margin-left:20%;
+}
+#fifth #twoi{
+    margin-left:65%;
+}
+#fifth .upper .title{
+    float:left;    
+    font-size:1em;
+}
+#fifth .upper #one{
+    margin-left:15%;
+}
+#fifth .upper #two{
+    margin-left:20%;
+}
+#sixth{
+    top:210%;
+}
+#sixth #onei{
+    margin-left:12%;
+}
+#sixth #twoi{
+    margin-left:65%;
+}
+#sixth .upper #one{
+    margin-left:5%;
+    font-size:1em;
+}
+#sixth .upper #two{    
+    margin-left:15%;
+    font-size:1em;
+}
+#seventh{
+    top:250%;
+}
+#seventh .imgContainer{
+    margin-left:22%;
+}
+#seventh .upper .title{
+    text-align:center;
+    margin-top:5%;
+    font-size:1em;
+}

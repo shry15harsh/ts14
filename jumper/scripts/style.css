@@ -1,0 +1,41 @@
+body{
+    background:rgba(120,120,10,0.3);
+    margin:0;
+    overflow:hidden;
+}
+#game{
+    position:absolute;
+    width:70%;
+    left:15%;
+    top:20%;
+    height:40%;
+    background:grey;
+}
+#blocks{
+    position:absolute;
+    width:100%;
+    top:45%;
+    height:30%;
+    background:red;
+    overflow:hidden;
+}
+.block{
+    list-style-type:none;
+    display:inline-block;
+    float:left;
+    width:10%;
+    height:100%;
+    background:yellow;
+    margin-right:5%;
+    transition:all 0.5s;
+}
+#bottom{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    text-align:center;
+    padding:2%;
+    font-size:1.8em;
+    background:white;
+    font-family:vetka;
+}

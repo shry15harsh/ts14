@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Type the alphabets</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link href="scripts/style.css" rel="stylesheet" type="text/css">
+
+    <script src="scripts/jquery-1.9.1.min.js"></script>
+  </head>
+
+  <body>
+	<img src="../images/ts_icon.png" style="position:absolute;width:10vmin;height:10vmin;top:2%;left:2%;"/>
+	<div id="game">
+		<span onclick="makeGame();" style="color:blue; cursor:pointer;"><u>New Game</u></span>&nbsp;&nbsp;&nbsp;Just start typing and timer will start.<br><br>Timer:<span id="timer"> 0.0 seconds</span><br/><br/>
+		<div id="alphabets"></div>
+		<div id="result"></div>
+	</div>
+	<div id="bottom">Developed by GAWDS&copy;</div>
+	
+	<script>
+		var firstTime,alphaCode,mseconds,timeId;
+		
+		function makeGame(){
+		clearInterval(timeId);
+		$('#alphabets').html('');
+		$('#result').html('');
+		$('#timer').html(' 0.0 seconds');
+		for(var i=0;i<26;++i){
+				var alphabet = 65+i;
+				$('#alphabets').append('<li>&#'+alphabet+';</li>');
+			}
+			firstTime=true;
+			alphaCode=65;
+			mseconds=0;
+			console.log('Game initialized');
+		}
+		
+		$(document).ready(function(){
+			makeGame();
+		});
+		
+		
+		$(document).on("keypress",function(e){
+			if(firstTime && (e.which==alphaCode||e.which==alphaCode+32)){
+				timeId=setInterval(function(){
+					mseconds+=100;
+					$('#timer').html(' '+mseconds/1000+' seconds');
+				},100);
+				firstTime=false;
+			}
+			if((e.which==alphaCode||e.which==alphaCode+32)&&!firstTime){
+				var child=alphaCode-64;
+				$('#alphabets li:nth-child('+child+')').css('background','green');
+				$('#alphabets li:nth-child('+child+')').css('color','white');
+				if(alphaCode-64==26){
+					clearInterval(timeId);
+					if(mseconds<5000)
+						$('#result').html("Yeah, you're fast. ");
+					else if(mseconds>=5000&&mseconds<7000)
+						$('#result').html("Good!! ");
+					else
+						$('#result').html("So slow, try again. ");
+					$('#result').append('You took '+mseconds/1000+' seconds.');
+				}
+				++alphaCode;
+			}
+			else{
+				if(alphaCode-64>26)
+				return;
+				if(!firstTime){
+					var child=alphaCode-64;
+					$('#alphabets li:nth-child('+child+')').css('background','red');
+					$('#alphabets li:nth-child('+child+')').css('color','white');
+				}
+			}
+		});
+	</script>
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-49269037-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </body>
+</html>

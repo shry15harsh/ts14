@@ -1,0 +1,38 @@
+body{
+    background:rgba(120,120,10,0.3);
+    margin:0;
+    overflow:hidden;
+}
+#game{
+    position:absolute;
+    width:70%;
+    left:15%;
+    top:20%;
+}
+#alphabets li{
+    list-style-type:none;
+    display:inline-block;
+    width:6%;
+    padding:2% 0% 2% 0%;
+    text-align:center;
+    background:whitesmoke;
+    margin:0.2vw;
+    border-radius:20%;
+}
+#result{
+    text-align:center;
+    margin-top:2%;
+    font-size:4vmin;
+    font-family:calibri;
+    color:grey;
+}
+#bottom{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    text-align:center;
+    padding:2%;
+    font-size:1.8em;
+    background:white;
+    font-family:vetka;
+}

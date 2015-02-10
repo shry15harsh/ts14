@@ -1,0 +1,100 @@
+@keyframes backAnim{
+    0% {background:rgba(100,100,100,0.5)}
+    50% {background:rgba(255,255,255,0.5);}
+    100% {background:rgba(100,100,100,0.5);}
+}
+@-webkit-keyframes backAnim{
+    0% {background:rgba(100,100,100,0.5)}
+    50% {background:rgba(255,255,255,0.5);}
+    100% {background:rgba(100,100,100,0.5);}
+}
+@-moz-keyframes backAnim{
+    0% {background:rgba(100,100,100,0.5)}
+    50% {background:rgba(255,255,255,0.5);}
+    100% {background:rgba(100,100,100,0.5);}
+}
+body{
+    margin:0;
+    font-family:calibri;
+    background:url('../images/register.jpg');
+    background-size:100%;
+    background-repeat:no-repeat;
+    overflow:hidden;
+}
+.details{
+    font-size:1.2em;
+}
+.register{
+    position:absolute;
+    width:30%;
+    margin:2% 15% 0% 5%;
+    background:rgba(20,20,20,0.8);
+    display:block;
+    padding:3%;
+    border-radius:10px;
+    color:white;
+}
+.register input,select{
+    float:left;
+    width:100%;
+    height:30px;
+    margin-bottom:20px;
+}
+select{
+    padding:5px;
+    color:skyblue;
+    width:30%;
+}
+#course{
+    margin-right:10%;
+}
+#otherCourse{
+    width:30%;
+    margin-right:5%;
+    display:none;
+}
+#year{
+    width:10%;
+}
+label{
+    float:left;
+    margin-right:5%;
+    font-size:1.2em;
+}
+#submit{
+    background:red;
+    border:0;
+    color:white;
+    font-weight:bold;
+    height:40px;
+}
+::-webkit-input-placeholder{
+    color:skyblue;
+}
+::-moz-placeholder{
+    color:skyblue;
+}
+::-ms-input-placeholder{
+    color:skyblue;
+}
+.icon{
+    position:absolute;
+    top:5%;
+    right:5%;
+    width:100px;
+    height:100px;
+    animation:backAnim 10s linear infinite;
+    border-radius:50%;
+    transition:all 1s;
+}
+.icon:hover{
+    width:300px;
+    height:300px;
+    animation-play-state:paused;
+}
+.icon img{
+    margin-top:5%;
+    margin-left:5%;
+    width:90%;
+    height:90%;
+}

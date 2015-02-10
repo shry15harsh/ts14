@@ -1,0 +1,72 @@
+.creditArea{
+    position:absolute;
+    background:grey;
+    width:80%;
+    height:600px;
+    left:10%;
+}
+#frontend{
+    display:block;
+}
+#backend{
+    display:none;
+}
+.creditArea .list li{
+    list-style-type:none;
+    display:block;
+    float:left;
+    padding:2%;
+    background:red;
+    border-radius:4px;
+    margin-right:2%;
+    cursor:pointer;
+}
+.creditArea .credits{
+    position:absolute;
+    background:white;
+    width:90%;
+    height:80%;
+    left:4%;
+    top:15%;
+}
+.creditArea .slider{
+    position:absolute;
+    width:16%;
+    height:4%;
+    background:white;
+    top:13%;
+    transform:translateX(24.5%);
+    transition:transform 0.5s;
+    border-radius:0px 0px 20px 20px;
+}
+.credits ul li{
+    background:blue;
+    width:200px;
+    height:220px;
+    margin-top:1%;
+    margin-left:2%;
+    text-align:right;
+    list-style-type:none;
+    display:inline-block;
+}
+.credits ul li .contact{
+    float:right;
+    width:20%;
+    height:20%;
+    background:rgba(255,255,255,0.4);
+    transition:width 1s;
+}
+.credits ul li .contact:hover{
+    background:rgba(0,0,0,0.4);
+    width:100%;
+}
+.credits ul li .name{
+    margin-top:80%;
+    background:red;
+    width:100%;
+    height:30%;
+    text-align:center;
+}
+#backend ul li:nth-child(1){
+    background:url('../images/ferb.jpg');
+}

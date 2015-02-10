@@ -1,0 +1,169 @@
+<html>
+<head>
+<link href="quiz.css" type="text/css" rel="stylesheet">
+<link href="sidebar.css" type="text/css" rel="stylesheet">
+<link href="form.css" type="text/css" rel="stylesheet">
+<script src="test.js"></script>
+</head>
+<body>
+<img src="ts_icon.png" style="width:80px;height:80px;top:2%;right:2%;position:absolute;"/>
+<div class="sidebar">PERSONALITY QUIZ</div>
+<div class="sharp">
+	<li class="flip-container">
+		<div class="flipper">
+			<div class="sided">
+				<h2>The Cube</h2>
+			</div>
+			<div id="texter">You see a cube.
+			<div class="show" onclick='showform("first");'>Okay</div>
+			<form name="colorform" id="first">
+				<li>What is the color of the cube?<br />
+				<select name="color">
+					<option value="0">Transparent</option>
+					<option value="1">Black</option>
+					<option value="2">White</option>
+					<option value="3">Red</option>
+					<option value="4">Yellow</option>
+					<option value="5">Green</option>
+					<option value="6">Blue</option>
+				</select>
+				</li>
+				<div class="ruler"></div>
+				<li>What is the size of cube with respect to the desert?<br />
+				<input type="radio" name="sizer" value="0" />Bigger
+				<input type="radio" name="sizer" value="1" />Smaller
+				</li>
+				<div class="ruler"></div>
+				<li>Where is the cube placed in the desert? Is it:<br />
+				<input type="radio" name="posn" value="0" />On the ground?
+				<input type="radio" name="posn" value="1" />Off the ground?
+				</li>
+			</form>
+			</div>
+			</div>
+	</li>
+	<li class="flip-container">
+		<div class="flipper">
+			<div class="sided">
+				<h2>The Ladder</h2>
+			</div>
+			<div id="texter">Now you see a ladder.
+			<div class="show" onclick='showform("second");'>Okay</div>
+			<form name="ladder" id="second">
+				<li>Is the ladder leaning on the cube?<br />
+				<input type="radio" name="lean" value="0">No</input>
+				<input type="radio" name="lean" value="1">Yes</input>
+				</li>
+				<div class="ruler"></div>
+				<li>What color is the ladder?<br />
+				<select name="lcolor">
+					<option value="0">Brown</option>
+					<option value="1">Black</option>
+					<option value="2">White</option>
+					<option value="3">Red</option>
+					<option value="4">Yellow</option>
+				</select>
+				</li>
+				<div class="ruler"></div>
+			</form>
+			</div>
+			</div>
+	</li>
+	<li class="flip-container">
+		<div class="flipper">
+			<div class="sided">
+				<h2>The Horse</h2>
+			</div>
+			<div id="texter">Now you see a horse<br />
+			<div class="show" onclick='showform("third");'>Okay</div>
+			<form name="horse" id="third">
+				<li>Is there any distance between the cube and the horse?<br />
+					<input type="radio" name="dist2" value="0">No</input>
+					<input type="radio" name="dist2" value="1">Yes</input>
+				</li>
+				<div class="ruler"></div>
+				<li>What color is the horse?
+				<select name="hcolor">
+					<option value="0">Brown</option>
+					<option value="1">White</option>
+					<option value="2">Black</option>
+				</select>
+				</li>
+				<div class="ruler"></div>
+				<li>Is the horse<br />
+					<input type="radio" name="free" value="0">Tied up?
+					<input type="radio" name="free" value="1">Roaming freely?
+				</li>
+			</form>
+			</div>
+		</div>
+	</li>
+</div>
+<br />
+<br />
+<div class="sharp" style="margin-left:20%;margin-top:-2%">
+	<li class="flip-container">
+		<div class="flipper">
+			<div class="sided">
+				<h2>The storm</h2>
+			</div>
+			<div id="texter">Now there is a storm<br />
+			<div class="show" onclick='showform("fourth");'>Okay</div>
+			<form name="stormform" id="fourth">
+				<li>Is the storm:<br />
+					<input type="radio" value="0" name="ssize" />Small?
+					<input type="radio" value="1" name="ssize" />Big?
+				</li>
+				<div class="ruler"></div>
+				<li>Where is the storm?<br />
+					<input type="radio" value="0" name="sloc" />Near you
+					<input type="radio" value="1" name="sloc" />Away from you
+				</li>
+			</form>
+			</div>
+		</div>
+	</li>
+	<li class="flip-container">
+		<div class="flipper">
+			<div class="sided">
+				<h2>The flowers</h2>
+			</div>
+			<div id="texter">
+			Now imagine flowers in the desert.
+			<div class="show" onclick='showform("fifth");'>Okay</div>
+			<form name="flower" id="fifth">
+				<li>How many flowers are there?<br />
+					<input type="radio" name="fqty" value="0" />Several
+					<input type="radio" name="fqty" value="1" />Few
+				</li>
+				<div class="ruler"></div>
+				<li>Where are the flowers?<br />
+					<input type="radio" name="floc" value="0" />Near the cube
+					<input type="radio" name="floc" value="1" />Away from the cube
+				</li>
+			</form>
+			</div>
+		</div>
+	</li>
+	<li style="margin-left:-12px;cursor:auto">
+		<div style="position:absolute;left:80%;top:70%;">
+		<input type="submit" value="Let's Go!" onclick="check()"/>
+		</div>
+	</li>
+</div>
+<div class="bottom">Developed by GAWDS&copy;</div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-49269037-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
